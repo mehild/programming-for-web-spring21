@@ -1,4 +1,6 @@
 let grid = undefined;
+let stroke1 = prompt("enter a basic color name in lowercase", "purple");
+let stroke2 = prompt("enter another basic color in lowercase", "purple");
 function setup() {
     createCanvas(1000, 800);
     background("#DED7F3");
@@ -7,19 +9,22 @@ function setup() {
 function draw() {
 
     // bottom
-    fill('#f1f1f1');
-    stroke("#926DFD");
+    fill("#f1f1f1");
+    stroke(stroke1);
     strokeWeight(10);
     ellipse(500, 600, 300);
     // middle
-    stroke("#926DFD");
     strokeWeight(10);
     ellipse(500, 400, 200); 
     // head
-    stroke("#926DFD");
     strokeWeight(10);
     ellipse(500, 275, 100);
-    
+    // buttons
+    stroke("#000000");
+    strokeWeight(12);
+    point(500, 430);
+    point(500, 400);
+    point(500, 370);
     // eyes
     stroke("#000000");
     strokeWeight(8);
@@ -43,14 +48,18 @@ function draw() {
     line(590, 400, 700, 300);
      
     // lil middle
-    fill('#f1f1f1');
-    stroke("#926DFD");
+    fill("#f1f1f1");
+    stroke(stroke2);
     strokeWeight(5);
     ellipse(250, 700, 150); 
     // lil head
-    stroke("#926DFD");
     strokeWeight(5);
     ellipse(250, 600, 90);
+    // buttons
+    stroke("#000000");
+    strokeWeight(8);
+    point(250, 710);
+    point(250, 690);
     // lil eyes
     stroke("#000000");
     strokeWeight(5);
@@ -65,5 +74,7 @@ function draw() {
     strokeWeight(3);
     noFill();
     arc(250, 580, 70, 70, 20, HALF_PI);
-   
+
+    // ground
+    // snow
 }
