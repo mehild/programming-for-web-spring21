@@ -4,21 +4,21 @@ const myGames =
 [
     {
     title: 'Connect-Four', 
-    type: 'Board Game', 
+    type: 'board game', 
     numberOfPlayers: '2', 
     shortDescription: 'is a tic-tac-toe-like game.'
     },
 
     {
     title: 'Jenga', 
-    type: 'Puzzle', 
+    type: 'puzzle', 
     numberOfPlayers: '6', 
     shortDescription: 'remove a block from the tower without toppling the whole thing over.'
     },
 
     {
     title: 'Mancala', 
-    type: 'Board Game', 
+    type: 'board game', 
     numberOfPlayers: '2', 
     shortDescription: 'turn-based strategy board game played with small stones.'
     },
