@@ -77,4 +77,6 @@ function draw() {
 
     // ground
     // snow
+    stroke("#FFFFFF");
+    strokeWeight(5);
 }
