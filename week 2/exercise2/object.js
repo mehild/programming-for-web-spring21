@@ -37,4 +37,4 @@ window.alert
 
 ' players. Short Description: ' 
 + myGames[gameChoice - 1].shortDescription
-);
+); 
