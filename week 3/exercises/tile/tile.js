@@ -1,5 +1,6 @@
 function setup() {
     createCanvas(200, 200);
+    noLoop();
 }
 
 function createTile() {
@@ -27,9 +28,6 @@ function createTile() {
     circle(150, 100, 100);
     circle(100, 50, 100);
     circle(100, 150, 100);
-
-
-   
 }
 
 function draw() {
