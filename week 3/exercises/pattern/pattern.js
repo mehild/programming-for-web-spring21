@@ -2,16 +2,16 @@ function setup() {
     createCanvas(600, 600);
 }
 
-function createTile() {
-    translate(0, 0);
-    fill('#334d00');
+function createTile(originX, originY, primaryColor, secondaryColor) {
+    translate(originX, originY);
+    fill(primaryColor);
     rect(0, 0, 200, 200);
     stroke('#558000');
     strokeWeight('10');
     line(0, 0, 200, 200);
     line(200, 0, 0, 200);
     noStroke();
-    fill('#223300');
+    fill(secondaryColor);
     circle(100, 50, 50);
     circle(50, 100, 50);
     circle(150, 100, 50);
@@ -30,5 +30,18 @@ function createTile() {
 }
 
 function draw(){
-    createTile();
+    createTile(0, 0, '#334d00', '#223300');
+    createTile(0, 200, '#223300','#334d00');
+    createTile(0, 200, '#334d00', '#223300');
+    createTile(200, -400, '#223300','#334d00');
+    createTile(0, 200, '#334d00', '#223300');
+    createTile(0, 200, '#223300','#334d00');
+    createTile(200, -400, '#334d00', '#223300');
+    createTile(0, 200, '#223300','#334d00');
+    createTile(0, 200, '#334d00', '#223300');
+    
+
+
+    
 }
+'#334d00'
