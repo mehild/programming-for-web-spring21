@@ -1,7 +1,7 @@
 function setup() {
     createCanvas(600, 600);
-    noLoop();
 }
+
 function createTile() {
     translate(0, 0);
     fill('#334d00');
@@ -28,6 +28,7 @@ function createTile() {
     circle(100, 50, 100);
     circle(100, 150, 100);
 }
+
 function draw(){
     createTile();
 }
