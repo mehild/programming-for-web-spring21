@@ -10,11 +10,11 @@ function makeArm() {
     noFill();
     stroke(0, 68, 102);
     strokeWeight(1);
-    ellipse(150, 150 + alt, 150 / alt);
+    square(150, 150 - alt, 150 + alt);
     stroke(26, 178, 255);
-    square (50, 50, 20);
+    square (50, 50, 20 + alt);
     stroke(128, 212, 255);
-    square (100, 100, 10);
+    square (100, 100, 10 + alt);
 }
 
 function draw() {
