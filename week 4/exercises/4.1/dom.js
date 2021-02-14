@@ -1,9 +1,9 @@
 const myEmptyDiv = document.querySelector('#myEmptyDiv');
 
-//heading element
+//heading
 const heading = document.createElement('h1');
 
-heading.innerHTML = 'Llamas are the camel’s hippie cousins. They belong to a group of animals called camelids that also includes alpacas. All camelids spit or stick out their tongue when they are annoyed.';
+heading.innerHTML = 'Llamas are the camel’s hippie cousins.';
 
 //dom
 heading.addEventListener('click', handleHeadingClick); 
