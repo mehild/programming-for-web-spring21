@@ -1,14 +1,13 @@
 const myEmptyDiv = document.querySelector('#myEmptyDiv');
 
-//heading
 const heading = document.createElement('h1');
 
 heading.innerHTML = 'Llamas are the camel’s hippie cousins.';
 
-//dom
+heading.style.cursor = 'pointer';
+
 heading.addEventListener('click', handleHeadingClick); 
 
-//etc
 myEmptyDiv.appendChild(heading);
 
 //background
