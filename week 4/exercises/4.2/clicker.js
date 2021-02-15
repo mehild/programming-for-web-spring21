@@ -1,17 +1,17 @@
-let recX = 0;
+let rectX = 0;
 const rectHeight = 75;
-let recY = 0;
+let rectY;
 const rectWidth = 75;
 let clickCount = 0;
 let speed;
 
-function setup () {
+function setup() {
     createCanvas(500, 500);
     rectY = random(height - rectHeight);
     speed = random(1, 3);
 }
 
-function draw () {
+function draw() {
     background('#DAF7A6');
     drawShape();
     rectX += speed;
@@ -21,15 +21,15 @@ function draw () {
     }
 }
 
-function mousePressed () {
-    if ((mouseX >= rectX && mouseX <= rectX + rectWidth) && (mouseY >= rectY && mouseY <= rectY + rectHeight)) {
-        clickCount++;
-        console.log('hit', clickCount);
-    }
+function mousePressed() {
+  if((mouseX >= rectX && mouseX <= rectX + rectWidth) && (mouseY >= rectY && mouseY <= rectY + rectHeight)) {
+    clickCount++;
+    console.log('hit', clickCount);
+  }
 }
 
-function drawShape () {
-    fill('#A3FD02');
+function drawShape() {
+    fill('green');
     rect(rectX, rectY, rectWidth, rectHeight);
 }
 
