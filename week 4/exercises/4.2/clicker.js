@@ -1,9 +1,10 @@
 let recX = 0;
 const rectHeight = 75;
-let recY;
+let recY = 0;
 const rectWidth = 75;
 let clickCount = 0;
 let speed;
+
 function setup () {
     createCanvas(500, 500);
     rectY = random(height - rectHeight);
