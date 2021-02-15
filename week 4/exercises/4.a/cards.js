@@ -1,22 +1,24 @@
-const circleDiameter = 100;
+const circleDiameter = 200;
 
-let startingX = 200;
-let startingY = 100;
+let startingX = 250;
+let startingY = 250;
 let myCircles = [];
 let startingId = 0;
 function setup () {
-    createCanvas(1000, 500);
+    createCanvas(windowWidth, windowHeight);
     background('#66ccff');
+    fill ('#cceeff');
+    stroke ('white');
     
     for (let k = 0; k < 3; k++) {
         for (let i = 0; i < 4; i++) {
             ellipse(startingX, startingY, circleDiameter);
             myCircles.push({ x: startingX, y: startingY, id: startingId });
-            startingX += 150;
+            startingX += 230;
             startingId++;
         }
-        startingY += 150;
-        startingX = 200;
+        startingY += 230;
+        startingX = 250;
     }
     
     console.log(myCircles);
