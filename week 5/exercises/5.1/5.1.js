@@ -1,18 +1,22 @@
+//variables
 let blockX = 0;
 let blockY = 0;
 let drawTimer;
 let speed = 5;
 let distance = 2;
 let blockColor = 255;
+
+//canvas
 function setup () {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
   background(0);
   drawBlock(blockX, blockY, 255);
 }
 
+//lil square
 function drawBlock (x, y, color) {
   fill(color || 255);
-  rect(x, y, 40, 40, 10);
+  rect(x, y, 50, 50);
 }
 
 function keyTyped () {
@@ -25,6 +29,7 @@ function keyTyped () {
   blockColor = keyToNumber;
   console.log('key to number3', keyToNumber);
 }
+
 window.setTimeout(() => {
     drawTimer = window.setInterval(() => {
     if (blockY - 40 <= height) {
