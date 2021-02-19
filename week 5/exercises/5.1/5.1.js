@@ -14,7 +14,7 @@ function setup () {
 
 //lil square
 function drawBlock (x, y, color) {
-  fill(color || '#3399ff');
+  fill(color || 255);
   rect(x, y, 50, 50);
 }
 
