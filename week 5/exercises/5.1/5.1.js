@@ -2,15 +2,14 @@
 let blockX = 0;
 let blockY = 0;
 let drawTimer;
-let speed = 5;
+let speed = 3;
 let distance = 2;
 let blockColor = 255;
 
 //canvas
 function setup () {
   createCanvas(500, 500);
-  background(0);
-  drawBlock(blockX, blockY, 255);
+  background('#ffaa00');
 }
 
 //lil square
@@ -19,6 +18,7 @@ function drawBlock (x, y, color) {
   rect(x, y, 50, 50);
 }
 
+//key 
 function keyTyped () {
   let keyToNumber = Number(key);
   if (isNaN(keyToNumber)) {
@@ -27,20 +27,21 @@ function keyTyped () {
   keyToNumber = map(keyToNumber, 1, 9, 1, 255);
   console.log('converted number', keyToNumber);
   blockColor = keyToNumber;
-  console.log('key to number3', keyToNumber);
 }
 
+//timer
 window.setTimeout(() => {
     drawTimer = window.setInterval(() => {
-    if (blockY - 40 <= height) {
+    if (blockY - 50 <= height) {
       drawBlock(blockX, blockY, blockColor);
       blockY += distance;
     } 
     else {
       blockY = 0;
-      blockX += 40;
+      blockX += 50;
     }
-    if (blockY >= height - 40 && blockX >= width - 40) {
+    if (blockY >= height - 50 && blockX >= width - 50) {
+     //cancels timer 
       window.clearInterval(drawTimer);
       alert('done');
     }
