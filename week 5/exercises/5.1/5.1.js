@@ -2,9 +2,9 @@
 let blockX = 0;
 let blockY = 0;
 let drawTimer;
-let speed = 3;
-let distance = 2;
-let blockColor = 255;
+let speed = 10;
+let distance = 5;
+let blockColor = '#3399ff';
 
 //canvas
 function setup () {
@@ -14,11 +14,11 @@ function setup () {
 
 //lil square
 function drawBlock (x, y, color) {
-  fill(color || 255);
+  fill(color || '#3399ff');
   rect(x, y, 50, 50);
 }
 
-//key 
+//keys 
 function keyTyped () {
   let keyToNumber = Number(key);
   if (isNaN(keyToNumber)) {
