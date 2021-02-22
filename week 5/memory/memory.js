@@ -28,36 +28,3 @@ function preload() {
         loadImage('img/flake6.jpg'),
     ];
 }
-
-function setup() {
-    createCanvas(displayWidth, displayHeight);
-    background('#66ccff');
-    let selectedFaces = [];
-    for (let z = 0; z < 6; z++) {
-        const randomIndex = floor(random(cardfaceArray.length));
-        const face = cardfaceArray[randomIndex];
-        selectedFaces.push(face);
-        selectedFaces.push(face);
-        cardfaceArray.splice(randomIndex, 1);
-    }
-    selectedFaces = shuffleArray(selectedFaces);
-
-    for (let j = 0; j < 3; j++) {
-        for (let i = 0; i < 4; i++) { 
-            const faceImage = selectedFaces.pop();
-            cards.push(new Card(startingX, startingY, faceImage));
-            startingX +=175;
-        }
-        startingY += 225;
-        startingX = 100;
-    }
-}
-
-function mousePressed() {
-    for (let j = 0; j < myCircles.length; j++) {
-        let distance = dist(mouseX, mouseY, myCircles[j].x, myCircles[j].y);
-        if (distance < circleDiameter / 2) {
-            console.log('circle has been click', myCircles[j].id);
-        }
-    }
-}
