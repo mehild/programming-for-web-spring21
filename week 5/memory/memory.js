@@ -11,10 +11,10 @@ const gameState = {
     waiting: false,
 };
 
+//card images
+
 let cardfaceArray = [];
-
 let cardback;
-
 function preload() {
     cardback = loadImage('img/cardback.png');
     cardfaceArray = [
