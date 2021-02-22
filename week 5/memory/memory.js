@@ -1,8 +1,10 @@
 const DOWN = 'down';
 const UP = 'up';
+
 let startingX = 200;
 let startingY = 200;
 let cards = [];
+
 const gameState = {
     totalPairs: 6,
     flippedCards: [],
@@ -27,62 +29,25 @@ function preload() {
     ];
 }
 
-
-
-
 function setup() {
-    createCanvas(200, 200);
-    noLoop();
-}
-
-function createTile() {
-    translate(0, 0);
-    fill('#cceeff');
-    circle(200, 200);
-    stroke('#558000');
-    strokeWeight('10');
-}
-
-function draw() {
-    createTile();
-}
-
-
-
-
-
-
-const circleDiameter = 200;
-
-let startingX = 250;
-let startingY = 250;
-let myCircles = [];
-let startingId = 0;
-function setup () {
-    createCanvas(windowWidth, windowHeight);
-    background('#66ccff');
-    fill ('#cceeff');
-    stroke ('white');
-    
-    for (let k = 0; k < 3; k++) {
-        for (let i = 0; i < 4; i++) {
-            ellipse(startingX, startingY, circleDiameter);
-            myCircles.push({ x: startingX, y: startingY, id: startingId });
-            startingX += 230;
-            startingId++;
-        }
-        startingY += 230;
-        startingX = 250;
+    createCanvas(displayWidth, displayHeight);
+    let selectedFaces = [];
+    for (let z = 0; z < 6; z++) {
+        const randomIndex = floor(random(cardfaceArray.length));
+        const face = cardfaceArray[randomIndex];
+        selectedFaces.push(face);
+        selectedFaces.push(face);
+        cardfaceArray.splice(randomIndex, 1);
     }
-    
-    console.log(myCircles);
-}
+    selectedFaces = shuffleArray(selectedFaces);
 
-function mousePressed() {
-    for (let j = 0; j < myCircles.length; j++) {
-        let distance = dist(mouseX, mouseY, myCircles[j].x, myCircles[j].y);
-        if (distance < circleDiameter / 2) {
-            console.log('circle has been click', myCircles[j].id);
+    for (let j = 0; j < 3; j++) {
+        for (let i = 0; i < 4; i++) { 
+            const faceImage = selectedFaces.pop();
+            cards.push(new Card(startingX, startingY, faceImage));
+            startingX +=175;
         }
+        startingY += 225;
+        startingX = 100;
     }
 }
