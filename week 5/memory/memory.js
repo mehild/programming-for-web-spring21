@@ -31,6 +31,7 @@ function preload() {
 
 function setup() {
     createCanvas(displayWidth, displayHeight);
+    background('#66ccff');
     let selectedFaces = [];
     for (let z = 0; z < 6; z++) {
         const randomIndex = floor(random(cardfaceArray.length));
@@ -49,5 +50,14 @@ function setup() {
         }
         startingY += 225;
         startingX = 100;
+    }
+}
+
+function mousePressed() {
+    for (let j = 0; j < myCircles.length; j++) {
+        let distance = dist(mouseX, mouseY, myCircles[j].x, myCircles[j].y);
+        if (distance < circleDiameter / 2) {
+            console.log('circle has been click', myCircles[j].id);
+        }
     }
 }
