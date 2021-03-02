@@ -36,8 +36,8 @@ function setup() {
 
     }
 
-    for (let j = 0; j < 4; j++){
-        for (let i = 0; i < 4; i++){
+    for (let j = 0; j < 3; j++){ //rows
+        for (let i = 0; i < 4; i++){ //col
             const faceImage = selectedFaces.pop();
             cards.push(new Card(startingX, startingY, faceImage));
             startX += 120; 
@@ -95,6 +95,21 @@ class Card {
             this.face = DOWN; 
         }
         this.show();
+    }
+
+    function shuffleArray (array) {
+        let counter = array.length;
+        while (counter > 0) {
+        // pick random index
+        const idx = Math.floor(Math.random() * counter);
+        // decrease counter by 1 (decrement)
+        counter--;
+        //swap the last element with it
+        const temp = array[counter];
+        array[counter] = array[idx];
+        array[idx] = temp;
+        }
+        return array;
     }
 
 }
