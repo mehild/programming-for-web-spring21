@@ -32,10 +32,8 @@ function setup() {
         selectedFaces.push(face);
         //remove
         cardfaceArray.splice(randomIdx, 1);
-
-
     }
-
+    selectedFaces = shuffleArray(selectedFaces);
     for (let j = 0; j < 3; j++){ //rows
         for (let i = 0; i < 4; i++){ //col
             const faceImage = selectedFaces.pop();
@@ -96,20 +94,19 @@ class Card {
         }
         this.show();
     }
+}
 
-    function shuffleArray (array) {
-        let counter = array.length;
-        while (counter > 0) {
-        // pick random index
-        const idx = Math.floor(Math.random() * counter);
-        // decrease counter by 1 (decrement)
-        counter--;
-        //swap the last element with it
-        const temp = array[counter];
-        array[counter] = array[idx];
-        array[idx] = temp;
-        }
-        return array;
+function shuffleArray (array) {
+    let counter = array.length;
+    while (counter > 0) {
+    // pick random index
+    const idx = Math.floor(Math.random() * counter);
+    // decrease counter by 1 (decrement)
+    counter--;
+    //swap the last element with it
+    const temp = array[counter];
+    array[counter] = array[idx];
+    array[idx] = temp;
     }
-
+    return array;
 }
