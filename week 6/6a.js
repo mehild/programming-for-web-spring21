@@ -1,6 +1,6 @@
-
-
-{ data: {
+new Vue({
+    el: '#llamaFacts',
+data: {
     llamaFact1: "Llamas are social animals."
     llamaFact2: "Life expectancy of a llama is 20-25 years."
     llamaFact2: "Baby llamas are called crias."
@@ -11,4 +11,5 @@
     llamaFact8: "Llama species is glama."
     llamaFact9: "Adult llamas can weigh between 280-340 lbs."
     llamaFact10: "Llamas eat grass."
- } }
+}
+});
