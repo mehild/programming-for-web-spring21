@@ -28,3 +28,25 @@ function preload() {
         loadImage('img/flake6.jpg'),
     ];
 }
+
+function setup() {
+    createCanvas(1000, 800);
+    background(0);
+    let myCard = new Card();
+    
+
+}
+
+class Card {
+    constructor (){
+        this.x = 100;
+        this.y = 100;
+        this.width = 80;
+        this.height = 100;
+        this.show();
+    }
+    show (){
+        fill 
+        rect(this.x, this.y, this.width, this.height, 10)
+    }
+}
