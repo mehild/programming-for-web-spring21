@@ -9,7 +9,8 @@ new Vue({
         llamaFact6: "Llamas can hum.",
         llamaFact7: "Llama poop is a source of fuel for fires.",
         llamaFact8: "Llama species is glama.",
-        llamaFact9: "Adult llamas can weigh between 280-340 lbs.",
+        llamaFact9: "Llamas are used as pack animals.",
         llamaFact10: "Llamas eat grass.",
+        morellama: "Llama yarn is lightweight and warm."
     }
 });
