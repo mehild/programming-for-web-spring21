@@ -1,18 +1,3 @@
-const DOWN = 'down';
-const UP = 'up';
-
-let startingX = 200;
-let startingY = 200;
-let cards = [];
-
-const gameState = {
-    totalPairs: 6,
-    flippedCards: [],
-    numMatched: 0,
-    attempts: 0,
-    waiting: false,
-};
-
 //from tutorials
 const DOWN = 'down';
 const UP = 'up';
@@ -37,11 +22,24 @@ function preload(){
 }
 
 function setup() {
-    createCanvas(1000, 800);
-    background(0);
+    createCanvas(windowWidth, windowHeight);
+    background('#66ccff');
+    let selectedFaces = [];
+    for (let z = 0;  z < 5; z++) {
+        const randomIdx = floor(random(cardfaceArray.length)); 
+        const face = cardfaceArray[randomIdx];
+        selectedFaces.push(face);
+        selectedFaces.push(face);
+        //remove
+        cardfaceArray.splice(randomIdx, 1);
+
+
+    }
+
     for (let j = 0; j < 5; j++){
         for (let i = 0; i < 5; i++){
-            cards.push(new Card(startingX, startingY));
+            const faceImage = selectedFaces.pop();
+            cards.push(new Card(startingX, startingY, faceImage));
             startX += 120; 
         }   
         startingY += 150;
@@ -58,12 +56,13 @@ function mousePressed() {
 }
 
 class Card {
-    constructor (x,y){
+    constructor (x,y, cardFaceImg) {
         this.x = x;
         this.y = y;
         this.width = 80;
         this.height = 100;
         this.face = DOWN
+        this.cardFaceImg = cardFaceImg;
         this.show();
     }
 
@@ -75,6 +74,7 @@ class Card {
         } else {
             fill('#aaa');
             rect(this.x, this.y, this.width, this.height, 10)
+            image(this.cardFaceImg, this.x, this.y)
         }
         
     }
@@ -96,4 +96,5 @@ class Card {
         }
         this.show();
     }
+
 }
