@@ -1,8 +1,8 @@
 //from tutorials
 const DOWN = 'down';
 const UP = 'up';
-let startingX = 100; 
-let startingY = 100;
+let startingX = 250; 
+let startingY = 250;
 let cards = [];
 const gameState = {
 };
@@ -25,7 +25,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     background('#66ccff');
     let selectedFaces = [];
-    for (let z = 0;  z < 5; z++) {
+    for (let z = 0;  z < 4; z++) {
         const randomIdx = floor(random(cardfaceArray.length)); 
         const face = cardfaceArray[randomIdx];
         selectedFaces.push(face);
@@ -36,8 +36,8 @@ function setup() {
 
     }
 
-    for (let j = 0; j < 5; j++){
-        for (let i = 0; i < 5; i++){
+    for (let j = 0; j < 4; j++){
+        for (let i = 0; i < 4; i++){
             const faceImage = selectedFaces.pop();
             cards.push(new Card(startingX, startingY, faceImage));
             startX += 120; 
