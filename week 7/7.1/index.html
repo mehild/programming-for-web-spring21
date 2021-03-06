@@ -1,17 +1,17 @@
 <html>
   <head>
-    <link rel="stylesheet" href="lib/style.css">
+    <link rel="stylesheet" href="main.css">
   </head>
 
   <body>
+    <h1>Llamas vs. Alpacas</h1>
     <div id="diff" v-cloak>
-        <a v-bind:href="llamaWiki">Llamas</a>  
+        <p><a v-bind:title="llamaTitle" v-bind:href="llamaWiki">Llamas</a> have much longer, banana-shaped ears.</p>
 
-        <a v-bind:href="alpacaWiki">Alpacas</a>
-         
+        <p><a v-bind:title="alpacaTitle" v-bind:href="alpacaWiki">Alpacas</a> ears have short spear-shaped ears.</p>     
     </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-  <script src="lib/script.js"></script>
+  <script src="script.js"></script>
   </body>
 </html>
