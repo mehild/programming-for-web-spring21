@@ -1,6 +1,7 @@
 new Vue({
-    el: "#greeting",
-    data: {
-      message: "Hey There"
+    el: "diff",
+    data: { 
+      llamaWiki: "https://en.wikipedia.org/wiki/Llama";
+      alpacaWiki: "https://en.wikipedia.org/wiki/Alpaca"
     }
-  });
+});
