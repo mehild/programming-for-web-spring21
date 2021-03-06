@@ -1,5 +1,5 @@
 new Vue({
-    el: "#myHello",
+    el: "#greeting",
     data: {
       message: "Hey There"
     }
