@@ -14,3 +14,4 @@ function draw() {
         }
     }
 }
+//created a variation on ex 4-13 from our text. orginally tried with arc but had no luck. computer overheated a lot during experimentations.
