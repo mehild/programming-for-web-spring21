@@ -1,0 +1,119 @@
+{
+    "statusCode": 200,
+    "message": "Quotes",
+    "pagination": {
+        "currentPage": 1,
+        "nextPage": 2,
+        "totalPages": 4845
+},
+
+    "totalQuotes": 72672,
+    "data": [
+
+        {
+            "_id": "5eb17aadb69dc744b4e70d23",
+            "quoteText": "Age is an issue of mind over matter. If you don't mind, it doesn't matter.",
+            "quoteAuthor": "Mark Twain",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d24",
+            "quoteText": "Anyone who stops learning is old, whether at twenty or eighty. Anyone who keeps learning stays young. The greatest thing in life is to keep your mind young.",
+            "quoteAuthor": "Henry Ford",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d25",
+            "quoteText": "Wrinkles should merely indicate where smiles have been.",
+            "quoteAuthor": "Mark Twain",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d26",
+            "quoteText": "True terror is to wake up one morning and discover that your high school class is running the country.",
+            "quoteAuthor": "Kurt Vonnegut",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d27",
+            "quoteText": "A diplomat is a man who always remembers a woman's birthday but never remembers her age.",
+            "quoteAuthor": "Robert Frost",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d28",
+            "quoteText": "As I grow older, I pay less attention to what men say. I just watch what they do.",
+            "quoteAuthor": "Andrew Carnegie",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d29",
+            "quoteText": "How incessant and great are the ills with which a prolonged old age is replete.",
+            "quoteAuthor": "C. S. Lewis",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d2a",
+            "quoteText": "Old age, believe me, is a good and pleasant thing. It is true you are gently shouldered off the stage, but then you are given such a comfortable front stall as spectator.",
+            "quoteAuthor": "Confucius",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d2b",
+            "quoteText": "Old age has deformities enough of its own. It should never add to them the deformity of vice.",
+            "quoteAuthor": "Eleanor Roosevelt",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d2c",
+            "quoteText": "Nobody grows old merely by living a number of years. We grow old by deserting our ideals. Years may wrinkle the skin, but to give up enthusiasm wrinkles the soul.",
+            "quoteAuthor": "Samuel Ullman",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d2d",
+            "quoteText": "An archaeologist is the best husband a woman can have. The older she gets the more interested he is in her.",
+            "quoteAuthor": "Agatha Christie",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d2e",
+            "quoteText": "All diseases run into one, old age.",
+            "quoteAuthor": "Ralph Waldo Emerson",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d2f",
+            "quoteText": "Bashfulness is an ornament to youth, but a reproach to old age.",
+            "quoteAuthor": "Aristotle",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d30",
+            "quoteText": "Like everyone else who makes the mistake of getting older, I begin each day with coffee and obituaries.",
+            "quoteAuthor": "Bill Cosby",
+            "quoteGenre": "age",
+            "__v": 0
+        },
+        {
+            "_id": "5eb17aadb69dc744b4e70d31",
+            "quoteText": "Age appears to be best in four things old wood best to burn, old wine to drink, old friends to trust, and old authors to read.",
+            "quoteAuthor": "Francis Bacon",
+            "quoteGenre": "age",
+            "__v": 0
+        }
+    ]
+}
