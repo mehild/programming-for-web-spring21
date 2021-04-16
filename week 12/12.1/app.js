@@ -1,10 +1,13 @@
+var level; 
+var mySound;
+
 function preload() {
-    soundFormats('wav');
+    //soundFormats('wav');
     mySound = loadSound('forest.wav');
 }
   
   function setup() {
-    cnv = createCanvas(displayWidth, displayHeight);
+    let cnv = createCanvas(displayWidth, displayHeight);
     cnv.mousePressed(canvasPressed);
   }
 
@@ -14,5 +17,5 @@ function preload() {
 }
   
   function canvasPressed() {
-    mySound.play('forest.wav');
+    mySound.play();
   }
