@@ -5,6 +5,7 @@ function setup() {
     pos = 0.0 
     inc = 3.0
 }
+
 function draw() {
     clear ()
     var mySinVal = sin(pos)
