@@ -6,8 +6,9 @@ function setup() {
     inc = 3.0
 }
 function draw() {
+    clear ()
     var mySinVal = sin(pos)
-    console.log(mySinVal)
-    ellipse(mySinVal + 100, height/2, 50, 50)
+    amplified = mySinVal * 50
+    ellipse(amplified + 100, height/2, 50, 50)
     pos = pos + inc
 }
