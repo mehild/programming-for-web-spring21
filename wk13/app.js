@@ -11,18 +11,18 @@ function setup() {
     angleMode(DEGREES);
 
     pos = 0.0; 
-    inc = 0.5;
+    inc = 0.3;
 }
 
 function draw() {
     clear();
-    translate(width/5, height/5);
+    translate(width/7, height/7);
 
     var mySinVal = 4*sin(sin(2*pos))/cos(4*pos);
     console.log(mySinVal);
     
-    amplified = mySinVal * 500
-    image(img, 10, amplified);
+    amplified = mySinVal * 800
+    image(img, 9, amplified);
 
    pos = pos + inc
 }
