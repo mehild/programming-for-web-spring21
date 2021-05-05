@@ -1,6 +1,8 @@
 var sparrow;
 let sky;
 
+//sound be let or var?
+
 let sound2;
 let sound3; 
 let sound5;
@@ -40,5 +42,5 @@ function canvasPressed() {
     sound2.play();
 }
 
-//https://creative-coding.decontextualize.com/media/ while looking for resources to assist me I found a way to tether an image to the mouse.
+//https://creative-coding.decontextualize.com/media/ while looking for resources to assist me I found a way to tether an image to the mouse. Which inpired instrument.
 
