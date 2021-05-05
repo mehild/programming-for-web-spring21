@@ -1,13 +1,15 @@
-var pos;
-var inc;
-let img;
+var pos
+var inc
+let img1
+//let img2
 
 function preload() {
-    img = loadImage('ball.png');
+    img1 = loadImage('ball.png');
+    //img2 = loadImage('ball2.png');
   }
 
 function setup() {
-    createCanvas(displayWidth, displayHeight);
+    createCanvas(900, 900);
     angleMode(DEGREES);
 
     pos = 0.0; 
@@ -16,13 +18,13 @@ function setup() {
 
 function draw() {
     clear();
-    translate(width/8, height/8);
+    translate(width/10, height/10);
 
     var mySinVal = sin(pos)
     console.log(mySinVal);
     
-    amplified = mySinVal * 2000
-    image(img, 8, amplified);
+    amplified = mySinVal * 1000
+    image(img1, 1, amplified);
 
    pos = pos + inc
 }
