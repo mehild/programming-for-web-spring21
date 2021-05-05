@@ -1,12 +1,10 @@
 var pos
 var inc
-let img1
-//let img2
+let img
 
 function preload() {
-    img1 = loadImage('ball.png');
-    //img2 = loadImage('ball2.png');
-  }
+    img = loadImage('ball.png');
+}
 
 function setup() {
     createCanvas(900, 900);
@@ -24,7 +22,5 @@ function draw() {
     console.log(mySinVal);
     
     amplified = mySinVal * 1000
-    image(img1, 1, amplified);
-
-    
+    image(img, 1, amplified);    
 }
