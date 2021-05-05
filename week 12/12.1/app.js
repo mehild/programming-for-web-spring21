@@ -1,25 +1,22 @@
-var level; 
-var mySound;
+/* eslint-disable indent */
+var mySound
+let amplitude
 
-
-function preload() {
-    //soundFormats('wav');
+function preload () {
     mySound = loadSound('forest.wav');
 }
-  
-  function setup() {
-    createCanvas(displayWidth, displayHeight);
-    cnv.mousePressed(canvasPressed);
-    mySound.setVolume(0.1);
+
+function setup () {
+    const cnv = createCanvas(displayWidth, displayHeight);
+    cnv.mouseClicked(toggleSound);
+    mySound.setVolume(1);
 }
 
-  function draw() {
-    background(204, 204, 255); 
-    textAlign(CENTER);
-    text('click to play and pause';    
+function draw () {
+    background('#D0f0C0');
 }
 
-function canvasPressed () {
+function toggleSound () {
     if (mySound.isPlaying()) {
         mySound.stop();
     } else {
