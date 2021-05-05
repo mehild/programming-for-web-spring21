@@ -26,5 +26,5 @@ function draw() {
     amplified = mySinVal * 1000
     image(img1, 1, amplified);
 
-   pos = pos + inc
+    
 }
