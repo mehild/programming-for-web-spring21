@@ -2,7 +2,7 @@ var mySound
 let img
 
 function preload () {
-    img = loadImage('forest.jpg');//add image
+    img = loadImage('images/sky.png');//add image
     mySound = loadSound('forest.wav');
 }
 
@@ -16,9 +16,10 @@ function setup () {
 function toggleSound () {
     if (mySound.isPlaying()) {
         mySound.stop();
-    } else {
+    } 
+    else {
         mySound.play();
     }
 }
 
-//https://p5js.org/reference/#/libraries/p5.sound 
+//https://p5js.org/reference/#/libraries/p5.sound

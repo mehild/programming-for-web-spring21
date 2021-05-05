@@ -16,7 +16,8 @@ function setup () {
 function toggleSound () {
     if (mySound.isPlaying()) {
         mySound.stop();
-    } else {
+    } 
+    else {
         mySound.play();
     }
 }
