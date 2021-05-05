@@ -1,7 +1,7 @@
 var sparrow;
 let sky;
 
-var sound2;
+let sound2;
 let sound3; 
 let sound5;
 
@@ -23,8 +23,10 @@ function preload() {
     sound5 = loadSound('sound/sound2.wav');
 }
 function setup() {
-    canvas = createCanvas(displayWidth, displayHeight);  
-}
+    let cnv = createCanvas(displayWidth, displayHeight);
+    cnv.mousePressed(canvasPressed);
+} 
+
 function draw() {
     background(sky);
     image(sparrow, mouseX, mouseY);
@@ -32,7 +34,11 @@ function draw() {
     image(bird2, 500, 400);
     image(bird3, 800, 300);
 }
+//tried tons of different mouse controls mousePressed etc... changed up let and var of sound and birds nothing worked defaulted to one sound
 
+function canvasPressed() {
+    sound2.play();
+}
 
 //https://creative-coding.decontextualize.com/media/ while looking for resources to assist me I found a way to tether an image to the mouse.
 
