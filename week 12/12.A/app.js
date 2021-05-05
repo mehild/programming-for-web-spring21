@@ -23,5 +23,5 @@ function canvasPressed() {
     mySound.play();
 }
 
-//https://creative-coding.decontextualize.com/media/ while looking for resources to assist me I found a way to tether an image to the mouse...
+//https://creative-coding.decontextualize.com/media/ while looking for resources to assist me I found a way to tether an image to the mouse.
 
