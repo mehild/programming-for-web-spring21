@@ -1,4 +1,3 @@
-/* eslint-disable indent */
 var mySound
 let amplitude
 
@@ -23,3 +22,5 @@ function toggleSound () {
         mySound.play();
     }
 }
+
+//https://p5js.org/reference/#/libraries/p5.sound 
