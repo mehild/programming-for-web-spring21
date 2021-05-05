@@ -7,7 +7,7 @@ function preload() {
   }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(displayWidth, displayHeight);
     angleMode(DEGREES);
 
     pos = 0.0; 
@@ -16,13 +16,13 @@ function setup() {
 
 function draw() {
     clear();
-    translate(width/7, height/7);
+    translate(width/8, height/8);
 
-    var mySinVal = 4*sin(sin(2*pos))/cos(4*pos);
+    var mySinVal = sin(pos)
     console.log(mySinVal);
     
-    amplified = mySinVal * 800
-    image(img, 9, amplified);
+    amplified = mySinVal * 2000
+    image(img, 8, amplified);
 
    pos = pos + inc
 }
