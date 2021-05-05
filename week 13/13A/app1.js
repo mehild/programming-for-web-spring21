@@ -8,12 +8,10 @@ var balldirectiony = -1;
 var ballspeed = 5;
 
 let bg;
-let ball;  
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
     bg = loadImage('court.jpeg'); //background
-    ball = loadImage('ball.png'); //tennis ball
 }
 
 function draw() {
@@ -24,7 +22,7 @@ function draw() {
    ballx = ballx + (balldirectionx*ballspeed);
    bally = bally + (balldirectiony*ballspeed);
 
-   ellipse(ballx, bally, ballwidth, ballheight) //tennis ball
+   ellipse(ballx, bally, ballwidth, ballheight); //tennis ball
 
    if(ballx < 0) {
        balldirectionx = balldirectionx*-1; 
@@ -34,11 +32,15 @@ function draw() {
     balldirectionx = balldirectionx*-1; 
    }
 
-   if(bally > 0) {
+   if(bally < 0) {
     balldirectiony = balldirectiony*-1;
    }
 
-   if(ballx < height) {
+   if(bally > height) {
     balldirectiony = balldirectiony*-1;
+   }
 }
-}
+
+//used https://youtu.be/Kp070rI_G48 as a guide... somewhat helpful.
+
+//tried to get the ellipse to be an image of a tennis ball... was unsuccessful.
