@@ -1,18 +1,16 @@
 var mySound
-let amplitude
+let img
 
 function preload () {
+    img = loadImage('forest.jpg');//add image
     mySound = loadSound('forest.wav');
 }
 
 function setup () {
     const cnv = createCanvas(displayWidth, displayHeight);
+    image(img, 0, 0);
     cnv.mouseClicked(toggleSound);
     mySound.setVolume(1);
-}
-
-function draw () {
-    background('#D0f0C0');
 }
 
 function toggleSound () {
