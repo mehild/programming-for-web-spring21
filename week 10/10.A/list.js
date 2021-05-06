@@ -26,7 +26,7 @@ const vm = new Vue({
     },
     mounted () {
         axios
-            .get('./data/list.json')
+            .get('./list.json') //fixed as suggested
             .then(response => {
                 console.log('response', response);
                 vm.tracks = response.data;
