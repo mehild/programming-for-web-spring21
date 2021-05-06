@@ -1,17 +1,14 @@
 
 function setup() {
-    createCanvas(displayWidth, displayHeight);
+    createCanvas(600,600);
+    background(128, 128, 0);
 }
   
 function draw() {
-    background (171, 219, 227);
-    strokeWeight(1);
-    noFill();
-    stroke(234, 182, 118);
-    for (var y = 0; y <= height; y += 8 ) {
-        for (var x = 0; x <= width; x += 15) {
-            ellipse( x + y, y, 16 - y/10.0, 16 - y/10.0);
-        }
+    if (mouseIsPressed) {
+        fill (0, 255, 0);
+    } else {
+        fill(0, 128, 0);
     }
+    ellipse(mouseX, mouseY, 100, 100);
 }
-//created a variation on ex 4-13 from our text. orginally tried with arc but had no luck. computer overheated a lot during experimentations.
