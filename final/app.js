@@ -6,7 +6,7 @@ const UP = 'up';
 let startingX = 100;
 let startingY = 100;
 const cards = []; //new array
-//where to fix 2 different card images = match?...  check screenshots
+
 const gameState = {
     totalPairs: 6,
     flippedCards: [],
@@ -39,9 +39,9 @@ function setup() {
     let selectedFaces = [];
     for (let z = 0; z < 6; z++) {
         const randomIdx = floor(random(cardObjArray.length));
-        const face = cardObjArray[randomIdx];
-        selectedFaces.push(face);
-        selectedFaces.push(face);
+        const cardObj = cardObjArray[randomIdx];
+        selectedFaces.push(cardObj.ImageA);
+        selectedFaces.push(cardObj.ImageB);
         //remove cardface so it doesn't get selected again
         cardObjArray.splice(randomIdx, 1);
     }
@@ -50,7 +50,7 @@ function setup() {
     for (let j = 0; j < 2; j++){
         for (let i = 0; i < 6; i++) { //# of cards
             const faceImage = selectedFaces.pop();
-            cards.push(new Card(startingX, startingY, faceImage));
+            cards.push(new Card(startingX, startingY, faceImage.image, faceImage.image));
             startingX += 150; // spacing of cards
         }
         startingY += 150; 
