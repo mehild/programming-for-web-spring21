@@ -1,4 +1,5 @@
 //following week 5 tutorials
+//challenge: need two different cards to be matches
 
 const DOWN = 'down';
 const UP = 'up';
@@ -58,7 +59,6 @@ function mousePressed() {
     for (let k = 0; k < cards.length; k++) {
         if(cards[k].didHit(mouseX, mouseY)){
             console.log('flipped', cards[k]);
-
         }
     }
 }
