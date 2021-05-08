@@ -3,19 +3,19 @@ const DOWN = 'down';
 const UP = 'up';
 let startingX = 100;
 let startingY = 100;
-const cards = [];
+const cards = []; //new array
 const gameState = {
 
 };
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    //createCanvas(800, 600); //tutorial
+    //createCanvas(windowWidth, windowHeight);
+    createCanvas(1050, 500); //tutorial
     background(230, 230, 250);
     for (let j = 0; j < 2; j++){
         for (let i = 0; i < 6; i++) { //# of cards
             cards.push(new Card(startingX, startingY));
-            startingX += 120;
+            startingX += 150; // spacing
         }
         startingY += 150; 
         startingX = 100;
@@ -34,8 +34,8 @@ class Card {
     constructor (x, y) {
         this.x = x;
         this.y = y;
-        this.width = 80; //key card back
-        this.height = 80; //key card back
+        this.width = 100; //key card back
+        this.height = 100; //key card back
         this.face = DOWN;
         this.show();
     }
@@ -46,7 +46,7 @@ class Card {
         rect(this.x, this.y, this.width, this.height, 10);
         } else { 
             fill('gray');
-            rect(this.x, this.y, this.width, this.height, 10);
+        rect(this.x, this.y, this.width, this.height, 10);
         }
     }
 
