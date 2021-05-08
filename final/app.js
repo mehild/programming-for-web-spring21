@@ -6,7 +6,13 @@ const UP = 'up';
 let startingX = 100;
 let startingY = 100;
 const cards = []; //new array
+//where to fix 2 different card images = match?
 const gameState = {
+    totalPairs: 0,
+    flippedCard: [],
+    numMatched: 0,
+    attepts: 0,
+    waiting: false,
 };
 
 let cardfaceArray = [];
@@ -27,7 +33,6 @@ function preload() {
         loadImage('images/v.png'),
         loadImage('images/y.png'),
     ];
-
 }
 
 function setup() {
@@ -43,6 +48,7 @@ function setup() {
         //remove cardface so it doesn't get selected again
         cardfaceArray.splice(randomIdx, 1);
     }
+
     selectedFaces = shuffleArray(selectedFaces);
     for (let j = 0; j < 2; j++){
         for (let i = 0; i < 6; i++) { //# of cards
@@ -57,8 +63,10 @@ function setup() {
 
 function mousePressed() {
     for (let k = 0; k < cards.length; k++) {
-        if(cards[k].didHit(mouseX, mouseY)){
+        //limiting cards flipped
+        if (gameState.flippedCards.length < 2 && cards[k].didHit(mouseX, mouseY)){
             console.log('flipped', cards[k]);
+            gameState.flippedCards.push(cards[k]);
         }
     }
 }
@@ -71,19 +79,20 @@ class Card {
         this.height = 100; //key card back
         this.face = DOWN;
         this.cardFaceImg = cardFaceImg;
+        this.isMatch = false; //
         this.show();
     }
 
 //allignment issues no fill = chaos
     show () {
-        if (this.face === DOWN){
-            fill(0); //black, tried no fill, no luck
-        rect(this.x, this.y, this.width, this.height, 10);
-        //image(cardBack, this.x, this.y, 100, 100)
-        } else { 
+        if (this.face === UP || this.isMatch){
             fill('white');
-        rect(this.x, this.y, this.width, this.height, 10);
-        image(this.cardFaceImg, this.x, this.y, 100, 100)
+            rect(this.x, this.y, this.width, this.height, 10);
+            image(this.cardFaceImg, this.x, this.y, 100, 100)
+        } else { 
+            fill(0);
+            rect(this.x, this.y, this.width, this.height, 10);
+            image(cardBack, this.x, this.y, 100, 100)
         }
     }
 
