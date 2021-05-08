@@ -1,3 +1,7 @@
+//following week 5 tutorials
+class Card
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
 
