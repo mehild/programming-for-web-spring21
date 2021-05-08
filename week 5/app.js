@@ -36,8 +36,9 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
-    //createCanvas(1050, 500); //tutorial
+    //createCanvas(windowWidth, windowHeight);
+    createCanvas(1050, 500); //tutorial
+    //background(230, 230, 250);
     let selectedFaces = [];
     for (let z = 0; z < 6; z++) {
         const randomIdx = floor(random(cardfaceArray.length));
@@ -53,7 +54,7 @@ function setup() {
         for (let i = 0; i < 6; i++) { //# of cards
             const faceImage = selectedFaces.pop();
             cards.push(new Card(startingX, startingY, faceImage));
-            startingX += 150; // spacing of cards
+            startingX += 150; // spacing
         }
         startingY += 150; 
         startingX = 100;
@@ -61,7 +62,7 @@ function setup() {
 }
 
 function draw () {
-    //background(230, 230, 250);
+    background(230, 230, 250);
     //winner, reshuffle
     if (gameState.numMatched === gameState.totalPairs){
         fill('yellow');
@@ -79,8 +80,7 @@ function draw () {
     noLoop();
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
-    //fill(0);
-
+    fill(0);
     //typeface add
     textSize(33);
     text('attempts ' + gameState.attempts, 100, 500);
@@ -116,7 +116,7 @@ function mousePressed() {
             const loopTimeout = window.setTimeout(() => {
                 loop();
                 window.clearTimeout(loopTimeout);
-            }, 1000) //more difficult by decreasing increment
+            }, 1000) //more difficult by decreasing
         }
     }
 }
@@ -125,24 +125,24 @@ class Card {
     constructor (x, y, cardFaceImg) {
         this.x = x;
         this.y = y;
-        this.width = 120; //key card back
-        this.height = 120; //key card back
+        this.width = 100; //key card back
+        this.height = 100; //key card back
         this.face = DOWN;
         this.cardFaceImg = cardFaceImg;
-        this.isMatch = false;
+        this.isMatch = false; //
         this.show();
     }
 
-//allignment cards
+//allignment issues no fill = chaos
     show () {
         if (this.face === UP || this.isMatch){
-            //fill('white');
-            //rect(this.x, this.y, this.width, this.height, 10);
-            image(this.cardFaceImg, this.x, this.y, 120, 120)
+            fill('white');
+            rect(this.x, this.y, this.width, this.height, 10);
+            image(this.cardFaceImg, this.x, this.y, 100, 100)
         } else { 
-            //fill(0);
-            //rect(this.x, this.y, this.width, this.height, 10);
-            image(cardBack, this.x, this.y, 120, 120)
+            fill(0);
+            rect(this.x, this.y, this.width, this.height, 10);
+            image(cardBack, this.x, this.y, 100, 100)
         }
     }
 
