@@ -7,6 +7,11 @@ const cards = []; //new array
 const gameState = {
 
 };
+let cardBack;
+function preload() {
+    cardBack = loadImage('images/back.png')
+
+}
 
 function setup() {
     //createCanvas(windowWidth, windowHeight);
@@ -40,13 +45,15 @@ class Card {
         this.show();
     }
 
+//allignment issues no fill = chaos
     show () {
         if (this.face === DOWN){
-            fill(0); //black
-        rect(this.x, this.y, this.width, this.height, 10);
+            fill(0); //black, tried no fill, no luck
+        rect(this.x, this.y, this.width, this.height, 20);
+        image(cardBack, this.x, this.y, 100, 100)
         } else { 
             fill('gray');
-        rect(this.x, this.y, this.width, this.height, 10);
+        rect(this.x, this.y, this.width, this.height, 20);
         }
     }
 
