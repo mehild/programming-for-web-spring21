@@ -16,6 +16,7 @@ const gameState = {
 };
 
 let cardfaceArray = [];
+//let cardObjArray = [];
 let cardBack;
 function preload() {
     cardBack = loadImage('images/back.png');
@@ -33,6 +34,14 @@ function preload() {
         loadImage('images/v.png'),
         loadImage('images/y.png'),
     ];
+   // cardObjArray = [
+      //  loadImage('images/a.png'), loadImage(''),
+       // loadImage('images/c.png'), loadImage(''),
+      //  loadImage('images/i.png'), loadImage(''),
+       // loadImage('images/p.png'), loadImage(''),
+       // loadImage('images/v.png'), loadImage(''),
+      //  loadImage('images/y.png'), loadImage(''),
+   // ]
 }
 
 function setup() {
