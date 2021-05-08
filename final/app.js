@@ -61,6 +61,10 @@ function setup() {
     }
 }
 
+function draw () {
+    
+}
+
 function mousePressed() {
     if (gameState.waiting) {
         return;
