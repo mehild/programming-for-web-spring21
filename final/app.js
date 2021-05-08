@@ -15,33 +15,22 @@ const gameState = {
     waiting: false,
 };
 
-let cardfaceArray = [];
-//let cardObjArray = [];
+//let cardfaceArray = [];
+let cardObjArray = [];
 let cardBack;
 function preload() {
     cardBack = loadImage('images/back.png');
-    cardfaceArray = [
-        loadImage('images/a.png'),
-        loadImage('images/c.png'),
-        loadImage('images/direct.png'),
-        loadImage('images/eye.png'),
-        loadImage('images/i.png'),
-        loadImage('images/magic.png'),
-        loadImage('images/p.png'),
-        loadImage('images/pen.png'),
-        loadImage('images/select.png'),
-        loadImage('images/sissors.png'),
-        loadImage('images/v.png'),
-        loadImage('images/y.png'),
-    ];
-   // cardObjArray = [
-      //  loadImage('images/a.png'), loadImage(''),
-       // loadImage('images/c.png'), loadImage(''),
-      //  loadImage('images/i.png'), loadImage(''),
-       // loadImage('images/p.png'), loadImage(''),
-       // loadImage('images/v.png'), loadImage(''),
-      //  loadImage('images/y.png'), loadImage(''),
-   // ]
+   // cardfaceArray = [
+      //  loadImage('images/a.png'),
+
+    cardObjArray = [
+        loadImage('images/a.png'), loadImage('images/direct.png'),
+        loadImage('images/c.png'), loadImage('images/sissors.png') ,
+        loadImage('images/i.png'), loadImage('images/eye.png') ,
+        loadImage('images/p.png'), loadImage('images/pen.png') ,
+        loadImage('images/v.png'), loadImage('images/select.png') ,
+        loadImage('images/y.png'), loadImage('images/magic.png') ,
+   ];
 }
 
 function setup() {
@@ -49,12 +38,12 @@ function setup() {
     //createCanvas(1050, 500); //tutorial
     let selectedFaces = [];
     for (let z = 0; z < 6; z++) {
-        const randomIdx = floor(random(cardfaceArray.length));
-        const face = cardfaceArray[randomIdx];
+        const randomIdx = floor(random(cardObjArray.length));
+        const face = cardObjArray[randomIdx];
         selectedFaces.push(face);
         selectedFaces.push(face);
         //remove cardface so it doesn't get selected again
-        cardfaceArray.splice(randomIdx, 1);
+        cardObjArray.splice(randomIdx, 1);
     }
 
     selectedFaces = shuffleArray(selectedFaces);
