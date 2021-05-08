@@ -20,16 +20,13 @@ let cardObjArray = [];
 let cardBack;
 function preload() {
     cardBack = loadImage('images/back.png');
-   // cardfaceArray = [
-      //  loadImage('images/a.png'),
-
     cardObjArray = [
-        loadImage('images/a.png'), loadImage('images/direct.png'),
-        loadImage('images/c.png'), loadImage('images/sissors.png') ,
-        loadImage('images/i.png'), loadImage('images/eye.png') ,
-        loadImage('images/p.png'), loadImage('images/pen.png') ,
-        loadImage('images/v.png'), loadImage('images/select.png') ,
-        loadImage('images/y.png'), loadImage('images/magic.png') ,
+        { imageA: loadImage('images/a.png'), imageB: loadImage('images/direct.png') },
+        { imageA: loadImage('images/c.png'), imageB:loadImage('images/sissors.png') },
+        { imageA: loadImage('images/i.png'), imageB:loadImage('images/eye.png') },
+        { imageA: loadImage('images/p.png'), imageB:loadImage('images/pen.png') },
+        { imageA: loadImage('images/v.png'), imageB:loadImage('images/select.png') },
+        { imageA: loadImage('images/y.png'), imageB:loadImage('images/magic.png') },
    ];
 }
 
@@ -50,7 +47,7 @@ function setup() {
     for (let j = 0; j < 2; j++){
         for (let i = 0; i < 6; i++) { //# of cards
             const faceImage = selectedFaces.pop();
-            cards.push(new Card(startingX, startingY, faceImage.image, faceImage.image));
+            cards.push(new Card(startingX, startingY, Image.image, Image.image));
             startingX += 150; // spacing of cards
         }
         startingY += 150; 
