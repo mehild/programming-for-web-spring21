@@ -1,21 +1,5 @@
-const DOWN = 'down';
-const UP = 'up';
-let startingX = 100;
-let startingY = 100;
-let cards = [];
-const gameState = {
-  totalPairs: 5,
-  flippedCards: [],
-  numMatched: 0,
-  attempts: 0,
-  waiting: false
-};
-let cardBack;
-let cardfaceArray = [];
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
-
 
 function draw () {
 }
@@ -37,22 +21,4 @@ function preload() {
     loadImage('images/v.png'),
     loadImage('images/y.png'),
   ]
-}
-
-
-
-function shuffleArray (array) {
-    let counter = array.length;
-    while (counter > 0) {
-      // Pick random index
-      const idx = Math.floor(Math.random() * counter);
-      // decrease counter by 1 (decrement)
-      counter--;
-      // swap the last element with it
-      const temp = array[counter];
-      array[counter] = array[idx];
-      array[idx] = temp;
-    }
-    return array;
-  }
 }
