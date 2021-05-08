@@ -6,10 +6,10 @@ const UP = 'up';
 let startingX = 100;
 let startingY = 100;
 const cards = []; //new array
-//where to fix 2 different card images = match?
+//where to fix 2 different card images = match?...  check screenshots
 const gameState = {
     totalPairs: 6,
-    flippedCard: [],
+    flippedCards: [],
     numMatched: 0,
     attepts: 0,
     waiting: false,
@@ -81,7 +81,7 @@ function draw () {
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
     fill(0);
-    //typeface
+    //typeface add
     textSize(33);
     text('attempts ' + gameState.attempts, 100, 500);
     text('matches ' + gameState.numMatched, 100, 400);
@@ -100,7 +100,8 @@ function mousePressed() {
     }
     if (gameState.flippedCards.length === 2) {
         gameState.attepts++;
-        if (gameState.flippedCards[0].cardFaceImg === gameState, flippedCards[1].cardFaceImg) {
+        if (gameState.flippedCards[0].cardFaceImg === gameState.
+        flippedCards[1].cardFaceImg) {
             //cards match time to score
             //mark cards as match so they don't flip back
             gameState.flippedCards[0].isMatch = true;
