@@ -32,22 +32,21 @@ function preload() {
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
-    //createCanvas(1050, 500); //tutorial
     let selectedFaces = [];
     for (let z = 0; z < 6; z++) {
         const randomIdx = floor(random(cardObjArray.length));
         const cardObj = cardObjArray[randomIdx];
-        selectedFaces.push(cardObj.imageA);
-        selectedFaces.push(cardObj.imageB);
+        selectedFaces.push({image: cardObj.imageA, name: cardObj.name }); //making this into an object and passing name
+        selectedFaces.push({image: cardObj.imageB, name: cardObj.name }); //^^^same, ken update
         //remove cardface so it doesn't get selected again
         cardObjArray.splice(randomIdx, 1);
     }
 
     selectedFaces = shuffleArray(selectedFaces);
-    for (let j = 0; j < 2; j++){
+    for (let j = 0; j < 2; j++) {
         for (let i = 0; i < 6; i++) { //# of cards
             const faceImage = selectedFaces.pop();
-            cards.push(new Card(startingX, startingY, faceImage.image, faceImage.image));
+            cards.push(new Card(startingX, startingY, faceImage.image, faceImage.name));//ken update
             startingX += 150; // spacing of cards
         }
         startingY += 150; 
@@ -58,7 +57,7 @@ function setup() {
 function draw () {
     //background(230, 230, 250);
     //winner, reshuffle
-    if (gameState.numMatched === gameState.totalPairs){
+    if (gameState.numMatched === gameState.totalPairs) {
         fill('yellow');
         textSize(66);
         text('winner', 425, 250);
@@ -95,8 +94,7 @@ function mousePressed() {
     }
     if (gameState.flippedCards.length === 2) {
         gameState.attepts++;
-        if (gameState.flippedCards[0].cardFaceImg === gameState.
-        flippedCards[1].cardFaceImg) {
+        if (gameState.flippedCards[0].cardFaceImg === gameState.flippedCards[1].nname) { //ken update, images won't match but now name will
             //cards match time to score
             //mark cards as match so they don't flip back
             gameState.flippedCards[0].isMatch = true;
@@ -117,12 +115,14 @@ function mousePressed() {
 }
 
 class Card {
-    constructor (x, y, cardFaceImg) {
+    constructor (x, y, cardFaceImg, name) {//ken update add 'name'
         this.x = x;
         this.y = y;
         this.width = 120; //key card back
         this.height = 120; //key card back
+        this.name = name; //ken update/add
         this.face = DOWN;
+        console.log('face image', cardFaceImg);//ken update/add
         this.cardFaceImg = cardFaceImg;
         this.isMatch = false;
         this.show();
@@ -131,12 +131,8 @@ class Card {
 //allignment cards
     show () {
         if (this.face === UP || this.isMatch){
-            //fill('white');
-            //rect(this.x, this.y, this.width, this.height, 10);
             image(this.cardFaceImg, this.x, this.y, 120, 120);
         } else { 
-            //fill(0);
-            //rect(this.x, this.y, this.width, this.height, 10);
             image(cardBack, this.x, this.y, 120, 120)
         }
     }
@@ -159,6 +155,7 @@ class Card {
           this.show();
     }
 }
+
 function shuffleArray (array) {
     let counter = array.length;
     while (counter > 0) {
