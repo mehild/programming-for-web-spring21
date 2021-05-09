@@ -76,7 +76,7 @@ function draw () {
     //fill(0);
 
     //typeface add
-    textSize(33);
+    textSize(30);
     text('attempts: ' + gameState.attempts, 50, 500);
     text('matches: ' + gameState.numMatched, 250, 500);
 }
@@ -103,6 +103,7 @@ function mousePressed() {
             gameState.flippedCards.length = 0;
             //increment the score
             gameState.numMatched++;
+            //loop occurs again
             loop();
         } else {
             gameState.waiting = true;
