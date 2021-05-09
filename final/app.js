@@ -15,18 +15,18 @@ const gameState = {
     waiting: false,
 };
 
-//let cardfaceArray = [];
+//
 let cardObjArray = [];
 let cardBack;
 function preload() {
     cardBack = loadImage('images/back.png');
     cardObjArray = [
-        { imageA: loadImage('images/a.png'), imageB: loadImage('images/direct.png') },
-        { imageA: loadImage('images/c.png'), imageB:loadImage('images/sissors.png') },
-        { imageA: loadImage('images/i.png'), imageB:loadImage('images/eye.png') },
-        { imageA: loadImage('images/p.png'), imageB:loadImage('images/pen.png') },
-        { imageA: loadImage('images/v.png'), imageB:loadImage('images/select.png') },
-        { imageA: loadImage('images/y.png'), imageB:loadImage('images/magic.png') },
+        { imageA: loadImage('images/a.png'), imageB: loadImage('images/direct.png'), name: 'direct' },
+        { imageA: loadImage('images/c.png'), imageB: loadImage('images/sissors.png'), name: 'sissors' },
+        { imageA: loadImage('images/i.png'), imageB: loadImage('images/eye.png'), name: 'eye' },
+        { imageA: loadImage('images/p.png'), imageB: loadImage('images/pen.png'), name: 'pen' },
+        { imageA: loadImage('images/v.png'), imageB: loadImage('images/select.png'), name: 'select' },
+        { imageA: loadImage('images/y.png'), imageB: loadImage('images/magic.png'), name: 'magic' },
    ];
 }
 
