@@ -37,8 +37,8 @@ function setup() {
     for (let z = 0; z < 6; z++) {
         const randomIdx = floor(random(cardObjArray.length));
         const cardObj = cardObjArray[randomIdx];
-        selectedFaces.push(cardObj.ImageA);
-        selectedFaces.push(cardObj.ImageB);
+        selectedFaces.push(cardObj.imageA);
+        selectedFaces.push(cardObj.imageB);
         //remove cardface so it doesn't get selected again
         cardObjArray.splice(randomIdx, 1);
     }
@@ -47,7 +47,7 @@ function setup() {
     for (let j = 0; j < 2; j++){
         for (let i = 0; i < 6; i++) { //# of cards
             const faceImage = selectedFaces.pop();
-            cards.push(new Card(startingX, startingY, Image.image, Image.image));
+            cards.push(new Card(startingX, startingY, faceImage.image, faceImage.image));
             startingX += 150; // spacing of cards
         }
         startingY += 150; 
@@ -133,7 +133,7 @@ class Card {
         if (this.face === UP || this.isMatch){
             //fill('white');
             //rect(this.x, this.y, this.width, this.height, 10);
-            image(this.cardFaceImg, this.x, this.y, 120, 120)
+            image(this.cardFaceImg, this.x, this.y, 120, 120);
         } else { 
             //fill(0);
             //rect(this.x, this.y, this.width, this.height, 10);
