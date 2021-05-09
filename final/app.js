@@ -36,8 +36,8 @@ function setup() {
     for (let z = 0; z < 6; z++) {
         const randomIdx = floor(random(cardObjArray.length));
         const cardObj = cardObjArray[randomIdx];
-        selectedFaces.push({image: cardObj.imageA, name: cardObj.name }); //making this into an object and passing name
-        selectedFaces.push({image: cardObj.imageB, name: cardObj.name }); //^^^same, ken update
+        selectedFaces.push({ image: cardObj.imageA, name: cardObj.name }); //making this into an object and passing name
+        selectedFaces.push({ image: cardObj.imageB, name: cardObj.name }); //^^^same, ken update
         //remove cardface so it doesn't get selected again
         cardObjArray.splice(randomIdx, 1);
     }
@@ -94,7 +94,7 @@ function mousePressed() {
     }
     if (gameState.flippedCards.length === 2) {
         gameState.attepts++;
-        if (gameState.flippedCards[0].cardFaceImg === gameState.flippedCards[1].nname) { //ken update, images won't match but now name will
+        if (gameState.flippedCards[0].name === gameState.flippedCards[1].name) { //ken update, images won't match but now name will
             //cards match time to score
             //mark cards as match so they don't flip back
             gameState.flippedCards[0].isMatch = true;
