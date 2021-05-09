@@ -77,8 +77,8 @@ function draw () {
 
     //typeface add
     textSize(33);
-    text('attempts ' + gameState.attempts, 100, 500);
-    text('matches ' + gameState.numMatched, 100, 400);
+    text('attempts: ' + gameState.attempts, 50, 500);
+    text('matches: ' + gameState.numMatched, 250, 500);
 }
 
 function mousePressed() {
@@ -93,7 +93,7 @@ function mousePressed() {
         }
     }
     if (gameState.flippedCards.length === 2) {
-        gameState.attepts++;
+        gameState.attempts++;
         if (gameState.flippedCards[0].name === gameState.flippedCards[1].name) { //ken update, images won't match but now name will
             //cards match time to score
             //mark cards as match so they don't flip back
