@@ -1,39 +1,49 @@
-  {
-    name: "Echinopsis huascha",
-    primary color: "Green / Lime",
-    bloom color: "Red Bloom",
-    special characteristic: "Showy Blooms, Hard to Kill",
-    image: "1.png",
-  }
-
-  {
-    name: "Frailea knippeliana",
-    primary color: "Green / Lime",
-    bloom color: "Yellow Bloom",
-    special characteristic: "Showy Blooms, Slow Grower, Lots of Offsets",
-    image: "2.png",
-  }
+//https://mountaincrestgardens.com/ information, images
   
-  {
-    name: "Parodia haselbergii",
-    primary color: "Green / Lime",
-    bloom color: "Red Bloom",
-    special characteristic: "Showy Blooms, Slow Grower",
-    image: "3.png",
-  }
+  var myVue = new Vue({
+    el: "#app",
+    data: {
+      cacti: [
+  
+        {
+          name: 'Echinopsis huascha',
+          primary: 'Green / Lime',
+          bloom: 'Red Bloom',
+          special: 'Showy Blooms, Hard to Kill',
+          image: 'img/1.png',
+        },
 
-  {
-    name: "Parodia werneri",
-    primary color: "Green / Lime",
-    bloom color: "Pink Bloom",
-    special characteristic: "Showy Blooms, Hard to Kill",
-    image: "4.png",
-  }
+        {
+          name: 'Frailea knippeliana',
+          primary: 'Green / Lime',
+          bloom: 'Yellow Bloom',
+          special: 'Showy Blooms, Slow Grower, Lots of Offsets',
+          image: 'img/2.png',
+        },
+        
+        {
+          name: 'Parodia haselbergii',
+          primary: 'Green / Lime',
+          bloom: 'Red Bloom',
+          special: 'Showy Blooms, Slow Grower',
+          image: 'img/3.png',
+        },
 
-  {
-    name: "Parodia procera",
-    primary color: "Green / Lime",
-    bloom color: "Orange Bloom, Yellow Bloom",
-    special characteristic: "Showy Blooms, Hard to Kill, Slow Grower",
-    image: "5.png",
-  }
+        {
+          name: 'Parodia werneri',
+          primary: 'Green / Lime',
+          bloom: 'Pink Bloom',
+          special: 'Showy Blooms, Hard to Kill',
+          image: 'img/4.png',
+        },
+
+        {
+          name: 'Parodia procera',
+          primary: 'Green / Lime',
+          bloom: 'Orange Bloom, Yellow Bloom',
+          special: 'Showy Blooms, Hard to Kill, Slow Grower',
+          image: 'img/5.png',
+        },
+      ]
+    }
+  });
