@@ -27,7 +27,7 @@ function preload() {
         { imageA: loadImage('images/p.png'), imageB: loadImage('images/pen.png'), name: 'pen' },
         { imageA: loadImage('images/v.png'), imageB: loadImage('images/select.png'), name: 'select' },
         { imageA: loadImage('images/y.png'), imageB: loadImage('images/magic.png'), name: 'magic' },
-        //all the updates, thx ken
+        //'name' update, thx ken
    ];
 }
 
@@ -56,8 +56,8 @@ function setup() {
 }
 
 function draw () { 
-    // winner, reshuffle
     background('white');
+    // winner, reshuffle
     if (gameState.numMatched === gameState.totalPairs) {
         fill('blue');
         textSize(90);
@@ -74,8 +74,6 @@ function draw () {
     noLoop();
     gameState.flippedCards.length = 0; 
     gameState.waiting = false;
-
-    // add typeface 
     fill('black');
     textSize(28);
     text('attempts: ' + gameState.attempts, 470, 100); 
@@ -95,7 +93,7 @@ function mousePressed() {
     }
     if (gameState.flippedCards.length === 2) {
         gameState.attempts++;
-        if (gameState.flippedCards[0].name === gameState.flippedCards[1].name) { // ken update, images won't match but now name will
+        if (gameState.flippedCards[0].name === gameState.flippedCards[1].name) { // ken update: images won't match but now name will
             // cards match time to score
             // mark cards as match so they don't flip back
             gameState.flippedCards[0].isMatch = true;
@@ -117,7 +115,7 @@ function mousePressed() {
 }
 
 class Card {
-    constructor (x, y, cardFaceImg, name) {// ken update add 'name'
+    constructor (x, y, cardFaceImg, name) { // ken update add 'name'
         this.x = x;
         this.y = y;
         this.width = 120; // key card back
