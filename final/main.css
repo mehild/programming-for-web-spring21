@@ -1,0 +1,22 @@
+h1 {
+
+    color: #fbb034; 
+    font-family: Impact,'Arial Narrow Bold', sans-serif;
+    font-size: 4em;
+    text-align: center;
+    overflow: visible;
+    visibility: visible;
+    display: block
+}
+
+body {
+    background:#ffffff;
+    font-family: 'Courier New', Courier, monospace;
+    color: #ffdd00;
+    margin: 0 auto;
+    width: 75%;
+    text-align: center;
+    overflow: visible;
+    visibility: visible;
+    display: block
+}

@@ -60,8 +60,8 @@ function draw () {
     background('white');
     if (gameState.numMatched === gameState.totalPairs) {
         fill('blue');
-        textSize(66);
-        text('winner', 150, 150);
+        textSize(90);
+        text('winner!', 500, 600);
         noLoop();
     }
     for (let k = 0; k < cards.length; k++) {
@@ -76,10 +76,10 @@ function draw () {
     gameState.waiting = false;
 
     // add typeface 
-    fill('blue');
+    fill('black');
     textSize(28);
-    text('attempts: ' + gameState.attempts, 50, 100); 
-    text('matches: ' + gameState.numMatched, 250, 100); 
+    text('attempts: ' + gameState.attempts, 470, 100); 
+    text('matches: ' + gameState.numMatched, 660, 100); 
 }
 
 function mousePressed() {
