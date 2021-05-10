@@ -37,17 +37,17 @@ function setup() {
     for (let z = 0; z < 6; z++) {
         const randomIdx = floor(random(cardObjArray.length));
         const cardObj = cardObjArray[randomIdx];
-        selectedFaces.push({ image: cardObj.imageA, name: cardObj.name }); //making this into an object and passing name
-        selectedFaces.push({ image: cardObj.imageB, name: cardObj.name }); //^^^same, ken update
-        //remove cardface so it doesn't get selected again
+        selectedFaces.push({ image: cardObj.imageA, name: cardObj.name }); // making this into an object and passing name
+        selectedFaces.push({ image: cardObj.imageB, name: cardObj.name }); // ^^^same, ken update
+        // remove cardface so it doesn't get selected again
         cardObjArray.splice(randomIdx, 1);
     }
 
     selectedFaces = shuffleArray(selectedFaces);
     for (let j = 0; j < 2; j++) {
-        for (let i = 0; i < 6; i++) { //# of cards
+        for (let i = 0; i < 6; i++) { // # of cards
             const faceImage = selectedFaces.pop();
-            cards.push(new Card(startingX, startingY, faceImage.image, faceImage.name));//ken update
+            cards.push(new Card(startingX, startingY, faceImage.image, faceImage.name));// ken update
             startingX += 150; // spacing of cards
         }
         startingY += 150; 
@@ -56,7 +56,7 @@ function setup() {
 }
 
 function draw () {
-    //winner, reshuffle
+    // winner, reshuffle
     if (gameState.numMatched === gameState.totalPairs) {
         fill('yellow');
         textSize(66);
@@ -69,14 +69,14 @@ function draw () {
         }
         cards[k].show();
     }
-    //scorecard
+    // scorecard
     noLoop();
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
-    //typeface add
+    // typeface add
     textSize(28);
-    text('attempts: ' + gameState.attempts, 50, 500);
-    text('matches: ' + gameState.numMatched, 250, 500);
+    text('attempts: ' + gameState.attempts, 50, 100);
+    text('matches: ' + gameState.numMatched, 250, 100);
 }
 
 function mousePressed() {
@@ -84,7 +84,7 @@ function mousePressed() {
         return;
     }
     for (let k = 0; k < cards.length; k++) {
-        //first check flipped cards length then trigger flip
+        // first check flipped cards length then trigger flip
         if (gameState.flippedCards.length < 2 && cards[k].didHit(mouseX, mouseY)){
             console.log('flipped', cards[k]);
             gameState.flippedCards.push(cards[k]);
@@ -92,43 +92,42 @@ function mousePressed() {
     }
     if (gameState.flippedCards.length === 2) {
         gameState.attempts++;
-        if (gameState.flippedCards[0].name === gameState.flippedCards[1].name) { //ken update, images won't match but now name will
-            //cards match time to score
-            //mark cards as match so they don't flip back
+        if (gameState.flippedCards[0].name === gameState.flippedCards[1].name) { // ken update, images won't match but now name will
+            // cards match time to score
+            // mark cards as match so they don't flip back
             gameState.flippedCards[0].isMatch = true;
             gameState.flippedCards[1].isMatch = true;
-            //empty flippedCards array
+            // empty flippedCards array
             gameState.flippedCards.length = 0;
             //increment the score
             gameState.numMatched++;
-            //loop occurs again
+            // loop occurs again
             loop();
         } else {
             gameState.waiting = true;
             const loopTimeout = window.setTimeout(() => {
                 loop();
                 window.clearTimeout(loopTimeout);
-            }, 1000) //more difficult by decreasing increment
+            }, 1000) // more difficult by decreasing increment
         }
     }
 }
 
 class Card {
-    constructor (x, y, cardFaceImg, name) {//ken update add 'name'
+    constructor (x, y, cardFaceImg, name) {// ken update add 'name'
         this.x = x;
         this.y = y;
-        this.width = 120; //key card back
-        this.height = 120; //key card back
-        this.name = name; //ken update/add
+        this.width = 120; // key card back
+        this.height = 120; // key card back
+        this.name = name; // ken update/add
         this.face = DOWN;
-        console.log('face image', cardFaceImg); //ken update/add
+        console.log('face image', cardFaceImg); // ken update/add
         this.cardFaceImg = cardFaceImg;
         this.isMatch = false;
         this.show();
     }
 
-//allignment cards
-    show () {
+    show () { // allignment of cards
         if (this.face === UP || this.isMatch){
             image(this.cardFaceImg, this.x, this.y, 120, 120);
         } else { 
@@ -158,7 +157,7 @@ class Card {
 function shuffleArray (array) {
     let counter = array.length;
     while (counter > 0) {
-      // Pick random index
+      // Ppck random index
       const idx = Math.floor(Math.random() * counter);
       // decrement counter by 1 (decrement)
       counter--;
