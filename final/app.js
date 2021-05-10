@@ -15,7 +15,7 @@ const gameState = {
     waiting: false,
 };
 
-//
+//images for cards
 let cardObjArray = [];
 let cardBack;
 function preload() {
@@ -123,7 +123,7 @@ class Card {
         this.height = 120; //key card back
         this.name = name; //ken update/add
         this.face = DOWN;
-        console.log('face image', cardFaceImg);//ken update/add
+        console.log('face image', cardFaceImg); //ken update/add
         this.cardFaceImg = cardFaceImg;
         this.isMatch = false;
         this.show();
