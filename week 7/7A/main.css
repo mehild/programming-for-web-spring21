@@ -1,7 +1,7 @@
 table, thead, th, tbody, tr, td {
     border: 0 none;
-    align: "center";
 }
+
 thead, th{
     background: #344021;
     color: white;

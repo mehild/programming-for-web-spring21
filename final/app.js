@@ -57,13 +57,14 @@ function setup() {
 
 function draw () { 
     // winner, reshuffle
+    background('white');
     if (gameState.numMatched === gameState.totalPairs) {
         fill('blue');
         textSize(66);
         text('winner', 150, 150);
         noLoop();
     }
-    for (let k = 0; k < cards.length; k++) { // maybe something in here is messing with count display?
+    for (let k = 0; k < cards.length; k++) {
         if (!cards[k].isMatch) {
           cards[k].face = DOWN;
         }
@@ -75,6 +76,7 @@ function draw () {
     gameState.waiting = false;
 
     // add typeface 
+    fill('blue');
     textSize(28);
     text('attempts: ' + gameState.attempts, 50, 100); 
     text('matches: ' + gameState.numMatched, 250, 100); 
