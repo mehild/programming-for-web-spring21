@@ -55,7 +55,7 @@ function setup() {
     }
 }
 
-function draw () {
+function draw () { 
     // winner, reshuffle
     if (gameState.numMatched === gameState.totalPairs) {
         fill('blue');
@@ -63,7 +63,7 @@ function draw () {
         text('winner', 150, 150);
         noLoop();
     }
-    for (let k = 0; k < cards.length; k++) {
+    for (let k = 0; k < cards.length; k++) { // maybe something in here is messing with count display?
         if (!cards[k].isMatch) {
           cards[k].face = DOWN;
         }
@@ -71,12 +71,13 @@ function draw () {
     }
     // scorecard
     noLoop();
-    gameState.flippedCards.length = 0;
+    gameState.flippedCards.length = 0; 
     gameState.waiting = false;
-    // typeface add
+
+    // add typeface 
     textSize(28);
-    text('attempts: ' + gameState.attempts, 50, 100);
-    text('matches: ' + gameState.numMatched, 250, 100);
+    text('attempts: ' + gameState.attempts, 50, 100); 
+    text('matches: ' + gameState.numMatched, 250, 100); 
 }
 
 function mousePressed() {
