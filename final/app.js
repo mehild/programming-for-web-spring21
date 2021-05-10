@@ -58,9 +58,9 @@ function setup() {
 function draw () {
     // winner, reshuffle
     if (gameState.numMatched === gameState.totalPairs) {
-        fill('yellow');
+        fill('blue');
         textSize(66);
-        text('winner', 425, 250);
+        text('winner', 150, 150);
         noLoop();
     }
     for (let k = 0; k < cards.length; k++) {
