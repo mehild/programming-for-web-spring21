@@ -1,0 +1,8 @@
+table, thead, th, tbody, tr, td {
+    border: 0 none;
+    
+}
+
+.odd {
+    background: #CEFF84;
+}
