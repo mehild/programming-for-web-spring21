@@ -20,13 +20,12 @@
             <tbody>
                 <tr 
                 v-for="(box, idx) in cacti"
-                v-bind:class="{odd: true}"
-                >
+                v-bind:class="{odd: idx % 2 !== 0, second: box.bloom === '2nd'}">
                     <td>{{box.name}}</td>
                     <td>{{box.primary}}</td>
                     <td>{{box.bloom}}</td>
                     <td>{{box.special}}</td>
-                    <td></td>
+                    <td><img v-bind:title="box.name" v-bind:src="box.image"></td>
                 </tr>
             </tbody>
         </table>
