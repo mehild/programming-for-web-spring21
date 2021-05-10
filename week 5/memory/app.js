@@ -27,7 +27,7 @@ function preload() {
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(1200, 800);
     let selectedFaces = [];
     for (let z = 0; z < 6; z++) {
         const randomIdx = floor(random(cardfaceArray.length));
@@ -43,9 +43,9 @@ function setup() {
         for (let i = 0; i < 6; i++) { //# of cards
             const faceImage = selectedFaces.pop();
             cards.push(new Card(startingX, startingY, faceImage));
-            startingX += 150; // spacing
+            startingX += 125; // spacing
         }
-        startingY += 150; 
+        startingY += 125; 
         startingX = 100;
     }
 }
@@ -53,9 +53,9 @@ function setup() {
 function draw () {
     //winner, reshuffle
     if (gameState.numMatched === gameState.totalPairs){
-        fill('red');
-        textSize(100);
-        text('winner', 425, 250);
+        fill('white');
+        textSize(75);
+        text('winner!', 350, 500);
         noLoop();
     }
     for (let k = 0; k < cards.length; k++) {
@@ -70,9 +70,9 @@ function draw () {
     gameState.waiting = false;
     fill('white');
     //typeface add
-    textSize(33);
-    text('attempts: ' + gameState.attempts, 50, 30);
-    text('matches: ' + gameState.numMatched, 250, 30);
+    textSize(25);
+    text('attempts: ' + gameState.attempts, 500, 30);
+    text('matches: ' + gameState.numMatched, 300, 30);
 }
 
 function mousePressed() {
@@ -113,8 +113,8 @@ class Card {
     constructor (x, y, cardFaceImg) {
         this.x = x;
         this.y = y;
-        this.width = 100; //key card back
-        this.height = 100; //key card back
+        this.width = 100; //card back
+        this.height = 100; //card back
         this.face = DOWN;
         this.cardFaceImg = cardFaceImg;
         this.isMatch = false; //
