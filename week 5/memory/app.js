@@ -1,12 +1,9 @@
-//following week 5 tutorials
-//challenge: need two different cards to be matches
-
 const DOWN = 'down';
 const UP = 'up';
 let startingX = 100;
 let startingY = 100;
 const cards = []; //new array
-//where to fix 2 different card images = match?...  check screenshots
+
 const gameState = {
     totalPairs: 6,
     flippedCards: [],
@@ -18,27 +15,19 @@ const gameState = {
 let cardfaceArray = [];
 let cardBack;
 function preload() {
-    cardBack = loadImage('images/back.png');
+    cardBack = loadImage('img/cardback.png');
     cardfaceArray = [
-        loadImage('images/a.png'),
-        loadImage('images/c.png'),
-        loadImage('images/direct.png'),
-        loadImage('images/eye.png'),
-        loadImage('images/i.png'),
-        loadImage('images/magic.png'),
-        loadImage('images/p.png'),
-        loadImage('images/pen.png'),
-        loadImage('images/select.png'),
-        loadImage('images/sissors.png'),
-        loadImage('images/v.png'),
-        loadImage('images/y.png'),
+        loadImage('img/flake1.png'),
+        loadImage('img/flake2.png'),
+        loadImage('img/flake3.png'),
+        loadImage('img/flake4.png'),
+        loadImage('img/flake5.png'),
+        loadImage('img/flake6.png'),
     ];
 }
 
 function setup() {
-    //createCanvas(windowWidth, windowHeight);
-    createCanvas(1050, 500); //tutorial
-    //background(230, 230, 250);
+    createCanvas(windowWidth, windowHeight);
     let selectedFaces = [];
     for (let z = 0; z < 6; z++) {
         const randomIdx = floor(random(cardfaceArray.length));
@@ -62,11 +51,10 @@ function setup() {
 }
 
 function draw () {
-    background(230, 230, 250);
     //winner, reshuffle
     if (gameState.numMatched === gameState.totalPairs){
-        fill('yellow');
-        textSize(66);
+        fill('red');
+        textSize(100);
         text('winner', 425, 250);
         noLoop();
     }
@@ -80,11 +68,11 @@ function draw () {
     noLoop();
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
-    fill(0);
+    fill('white');
     //typeface add
     textSize(33);
-    text('attempts ' + gameState.attempts, 100, 500);
-    text('matches ' + gameState.numMatched, 100, 400);
+    text('attempts: ' + gameState.attempts, 50, 30);
+    text('matches: ' + gameState.numMatched, 250, 30);
 }
 
 function mousePressed() {
@@ -99,7 +87,7 @@ function mousePressed() {
         }
     }
     if (gameState.flippedCards.length === 2) {
-        gameState.attepts++;
+        gameState.attempts++;
         if (gameState.flippedCards[0].cardFaceImg === gameState.
         flippedCards[1].cardFaceImg) {
             //cards match time to score
@@ -136,13 +124,9 @@ class Card {
 //allignment issues no fill = chaos
     show () {
         if (this.face === UP || this.isMatch){
-            fill('white');
-            rect(this.x, this.y, this.width, this.height, 10);
-            image(this.cardFaceImg, this.x, this.y, 100, 100)
+            image(this.cardFaceImg, this.x, this.y, 120, 120)
         } else { 
-            fill(0);
-            rect(this.x, this.y, this.width, this.height, 10);
-            image(cardBack, this.x, this.y, 100, 100)
+            image(cardBack, this.x, this.y, 120, 120)
         }
     }
 

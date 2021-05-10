@@ -3,8 +3,8 @@
 
 const DOWN = 'down';
 const UP = 'up';
-let startingX = 100;
-let startingY = 100;
+let startingX = 200;
+let startingY = 200;
 const cards = []; //new array
 
 const gameState = {
@@ -55,7 +55,6 @@ function setup() {
 }
 
 function draw () {
-    //background(230, 230, 250);
     //winner, reshuffle
     if (gameState.numMatched === gameState.totalPairs) {
         fill('yellow');
@@ -73,8 +72,6 @@ function draw () {
     noLoop();
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
-    //fill(0);
-
     //typeface add
     textSize(30);
     text('attempts: ' + gameState.attempts, 50, 500);
