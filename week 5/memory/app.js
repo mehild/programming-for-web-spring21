@@ -52,6 +52,7 @@ function setup() {
 
 function draw () {
     //winner, reshuffle
+    background('#b5dfff');
     if (gameState.numMatched === gameState.totalPairs){
         fill('white');
         textSize(75);
