@@ -50,7 +50,7 @@ function setup() {
             startingX += 150; // spacing of cards
         }
         startingY += 150; 
-        startingX = 100;
+        startingX = 200;
     }
 }
 
@@ -73,7 +73,7 @@ function draw () {
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
     //typeface add
-    textSize(30);
+    textSize(28);
     text('attempts: ' + gameState.attempts, 50, 500);
     text('matches: ' + gameState.numMatched, 250, 500);
 }
@@ -157,7 +157,7 @@ class Card {
 function shuffleArray (array) {
     let counter = array.length;
     while (counter > 0) {
-      // Pick randow index
+      // Pick random index
       const idx = Math.floor(Math.random() * counter);
       // decrement counter by 1 (decrement)
       counter--;
