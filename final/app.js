@@ -27,6 +27,7 @@ function preload() {
         { imageA: loadImage('images/p.png'), imageB: loadImage('images/pen.png'), name: 'pen' },
         { imageA: loadImage('images/v.png'), imageB: loadImage('images/select.png'), name: 'select' },
         { imageA: loadImage('images/y.png'), imageB: loadImage('images/magic.png'), name: 'magic' },
+        //all the updates, thx ken
    ];
 }
 
