@@ -16,16 +16,20 @@
                     <div class="cell release-date">Console Release Date</div>
                     <div class="cell console-image">Image</div>
                     <div class="cell collected">Part of the collection</div>
+                    <div class="cell actions">Actions</div>
                 </div>
         <div class="collectionRow" v-for="(console, index) in consoles" v-bind:class="{odd: index % 2 !== 0, owned: console.collected}">
             <div class="cell console-manufactuer">{{console.manufactuer}}</div>
             <div class="cell console-name">{{console.name}}</div>
             <div class="cell release-date">{{console.releaseDate}}</div>
             <div class="cell console-image"><img :src="console.image" :alt="console.name" /></div>
-            <div class="cell collected">{{console.collected}}</div>
+            <div class="cell collected">
+              <button type='button' v-on:click="deleteItem(console)">Delete</button>
+            </div>
+            
         </div>
     </div>
-    <form v-on:submit="submitHandler">
+    <form v-on:submit.prevent="submitHandler">
       <fieldset>
         <legend>Add a console to the collection</legend>
         <div>
