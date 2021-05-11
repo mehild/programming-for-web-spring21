@@ -49,3 +49,28 @@ body {
   display: block;
   max-width: 160px;
 }
+
+.new-console-form {
+  margin: 20px 0;
+}
+
+.new-console-form fieldset {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.new-console-form div {
+  margin: 10px 0;
+  width: 120px;
+}
+
+.new-console-form div label {
+  max-width: 120px;
+}
+
+.new-console-form div input {
+  max-width: 120px;
+  display: block;
+}
