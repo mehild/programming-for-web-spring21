@@ -1,0 +1,32 @@
+<!doctype html>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="lib/style.css">
+    
+  </head>
+
+  <body>
+   <h1>Video Game Consoles (collected and not collected)</h1>
+   <div id="app">
+    <div class="collectionWrapper">
+            <div class="collectionRow header">
+                    <div class="cell console-manufactuer">Manufactuer</div>
+                    <div class="cell console-name">Console Name</div>
+                    <div class="cell release-date">Console Release Date</div>
+                    <div class="cell console-image">Image</div>
+                    <div class="cell collected">Part of the collection</div>
+                </div>
+        <div class="collectionRow" v-for="(console, index) in consoles" v-bind:class="{odd: index % 2 !== 0, owned: console.collected}">
+            <div class="cell console-manufactuer">{{console.manufactuer}}</div>
+            <div class="cell console-name">{{console.name}}</div>
+            <div class="cell release-date">{{console.releaseDate}}</div>
+            <div class="cell console-image"><img :src="console.image" :alt="console.name" /></div>
+            <div class="cell collected">{{console.collected}}</div>
+        </div>
+    </div>
+   </div>
+   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+   <script src="lib/script.js"></script>
+  </body>
+</html>
