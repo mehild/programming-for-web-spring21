@@ -25,6 +25,32 @@
             <div class="cell collected">{{console.collected}}</div>
         </div>
     </div>
+    <form v-on:submit="submitHandler">
+      <fieldset>
+        <legend>Add a console to the collection</legend>
+        <div>
+          <label for="manufactuer">Manufactuer</label>
+          <input id="manufactuer" type="text" v-model="newConsoleObj.manufactuer">
+        </div>
+        <div>
+          <label for="name">Console Name</label>
+          <input id="name" type="text" v-model="newConsoleObj.name">
+        </div>
+        <div>
+          <label for="release-date">Release Date</label>
+          <input id="release-date" type="date" v-model="newConsoleObj.releaseDate">
+        </div>
+        <div>
+          <label for="image">Image</label>
+          <input id="image" type="text" v-model="newConsoleObj.image">
+        </div>
+        <div>
+          <label for="image">Owned</label>
+          <input id="image" type="checkbox" v-model="newConsoleObj.collected">
+        </div>
+        <button type="submit">Submit</button>
+      </fieldset> 
+   </form>
    </div>
    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
    <script src="lib/script.js"></script>
