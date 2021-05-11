@@ -1,21 +1,19 @@
 [v-cloak] {
   display: none;
 }
-* {
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  font-size: 16px;
-}
+
 h1,
 h2,
 h3 {
   font-size: 24px;
+  margin: 10px
 }
 body {
-  background-color: #fefef1;
+  font-family: 'Comfortaa', sans-serif;
+  background-color: #DFD1FF;
   width: 100%;
-  max-width: 1080px;
-  margin: 0 auto;
+  height: 100%;
+  margin: 0;
 }
 .collectionWrapper {
   display: flex;
@@ -26,17 +24,17 @@ body {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: #ccc;
-  border-bottom: 1px solid #111;
+  background-color: #8B839F;
 }
 .collectionRow.odd {
-  background-color: #eee;
+  background-color: #C3B7DF;
 }
 .collectionRow.header {
-  background-color: #fff;
+  color: white;
+  background-color: #544E60;
 }
 .collectionRow.owned {
-  color: maroon;
+  color: rgb(63, 0, 108);
   font-weight: 600;
 }
 
@@ -70,7 +68,7 @@ body {
   max-width: 120px;
 }
 
-.new-console-form div input {
+.new-console-form input {
   max-width: 120px;
   display: block;
 }
